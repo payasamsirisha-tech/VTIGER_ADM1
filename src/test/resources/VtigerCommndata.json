@@ -1,0 +1,9 @@
+{
+	
+	"Browser":"Chrome",
+	"Username":"admin",
+	"Password":"password,"
+	"URL":"http://localhost:8888/index.php?action=index&module=Home",
+	"timeouts":20
+	
+}
