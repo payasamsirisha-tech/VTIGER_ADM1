@@ -57,12 +57,8 @@
 			<scope>compile</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>Advance</groupId>
-			<artifactId>AdvanceSelenium</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<!-- Source: https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+		
+		
 <dependency>
     <groupId>com.aventstack</groupId>
     <artifactId>extentreports</artifactId>
