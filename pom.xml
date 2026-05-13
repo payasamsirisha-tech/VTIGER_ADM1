@@ -55,9 +55,8 @@
 			<artifactId>mysql-connector-j</artifactId>
 			<version>9.6.0</version>
 			<scope>compile</scope>
-		</dependency>
+		</dependency>		
 
-		
 <dependency>
     <groupId>com.aventstack</groupId>
     <artifactId>extentreports</artifactId>
