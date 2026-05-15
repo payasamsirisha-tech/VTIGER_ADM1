@@ -46,12 +46,12 @@ public class ExcelFileUtility {
 	 */
 	
 	public void writeBackDataToExcelFile(String sheetname,int Rindex,int Cindex,String data) throws EncryptedDocumentException, IOException {
-		FileInputStream efis=new FileInputStream("./src/test/resources/orgExcel.xlsx");
+		FileInputStream efis=new FileInputStream("./src/test/resources/VitigerTestData.xlsx");
 		wb=WorkbookFactory.create(efis);
 		
 		wb.getSheet(sheetname).createRow(Rindex).createCell(Cindex).setCellValue(data);
 		
-		FileOutputStream fos=new FileOutputStream("./src/test/resources/orgExcel.xlsx");
+		FileOutputStream fos=new FileOutputStream("./src/test/resources/VitigerTestData.xlsx");
 		
 		wb.write(fos);
 	}
@@ -65,12 +65,12 @@ public class ExcelFileUtility {
 	 * @throws IOException
 	 */
 	public void writeBackDataToExcel_ExistingRow(String sheetname,int Rindex,int Cindex,String data) throws EncryptedDocumentException, IOException {
-		FileInputStream efis=new FileInputStream("./src/test/resources/orgExcel.xlsx");
+		FileInputStream efis=new FileInputStream("./src/test/resources/VitigerTestData.xlsx");
 		wb=WorkbookFactory.create(efis);
 		
 		wb.getSheet(sheetname).getRow(Rindex).createCell(Cindex).setCellValue(data);
 		
-		FileOutputStream fos=new FileOutputStream("./src/test/resources/orgExcel.xlsx");
+		FileOutputStream fos=new FileOutputStream("./src/test/resources/VitigerTestData.xlsx");
 		
 		wb.write(fos);
 	}

@@ -37,7 +37,7 @@ public class contact_orgnametest {
 		
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		
-		driver.get("http://localhost:8888/index.php?action=index&module=Home");
+		driver.get("http://localhost:8080");
 			
 		driver.findElement(By.name("user_name")).sendKeys("admin");
 		

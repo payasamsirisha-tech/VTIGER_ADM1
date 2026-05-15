@@ -1,6 +1,7 @@
 package ContactModuleWithPOP;
 
 import java.io.FileNotFoundException;
+
 import java.io.IOException;
 
 import org.openqa.selenium.By;
@@ -32,22 +33,22 @@ import POPpages_GenericUtility.JavaUtility;
 import POPpages_GenericUtility.PropertyfileUtility;
 import POPpages_GenericUtility.WebDriverUtility;
 
+
 //@Listeners(ListenersUtility.Listeners.class)
 
-
-/** 
+/**
  * This is contact module
  */
 public class ContactModuleTest extends BaseClass {
-	@Test(groups = "smoke", retryAnalyzer = ListenersUtility.RetryAnalyser.class)
+	@Test (groups = "smoke", retryAnalyzer = ListenersUtility.RetryAnalyser.class)
 
 	public void name_test() throws IOException, InterruptedException {
 
 //        fetch random integer
-		
+
 //		ListenersUtility.Listeners.test.log(Status.INFO, "Fetching random intiger");
 //	 test we given as static so static variable can't create multiple objects for batch pRller group executions so we given static variales in another clas and that class we are calling here
-		
+
 		UtilityObjectClass.getTest().log(Status.INFO, "Fetchimg random intiger");
 		JavaUtility jutil = new JavaUtility();
 		int Randomnum = jutil.fetchRandomInt();
@@ -55,7 +56,7 @@ public class ContactModuleTest extends BaseClass {
 //     	Fetch data from excel
 		UtilityObjectClass.getTest().log(Status.INFO, "Fetching data from excelfile");
 		ExcelFileUtility exutil = new ExcelFileUtility();
-		String Contactname = exutil.FetchDatafromExcelFile("ConData", 1, 3) + Randomnum;
+		String Contactname = exutil.FetchDatafromExcelFile("Condata", 1, 3) + Randomnum;
 
 //		validate home page
 
@@ -133,11 +134,11 @@ public class ContactModuleTest extends BaseClass {
 //	identify organization tab and click on it
 		HomePopPage home = new HomePopPage(driver);
 		UtilityObjectClass.getTest().log(Status.INFO, "identify orgtab  and click on it");
-		
+
 		home.getOrgbtn();
 
 //	identify plus icon and click on it usig orgPOppage
-		
+
 		OrgPopPage org = new OrgPopPage(driver);
 		UtilityObjectClass.getTest().log(Status.INFO, "identify orgplus icon and click on it");
 		org.orgplusicon();
@@ -236,7 +237,7 @@ public class ContactModuleTest extends BaseClass {
 		soft.assertAll();
 	}
 
-	@Test(groups = "Regression",retryAnalyzer = ListenersUtility.RetryAnalyser.class)
+	@Test(groups = "Regression", retryAnalyzer = ListenersUtility.RetryAnalyser.class)
 	public void createConWithSuppodate_test() throws FileNotFoundException, IOException, InterruptedException {
 
 //        fetch random integer
@@ -247,7 +248,7 @@ public class ContactModuleTest extends BaseClass {
 //	     Fetch data from excel
 		UtilityObjectClass.getTest().log(Status.INFO, "Fetching data from excel file");
 		ExcelFileUtility exutil = new ExcelFileUtility();
-		String Contactname = exutil.FetchDatafromExcelFile("ConData", 4, 3) + Randomnum;
+		String Contactname = exutil.FetchDatafromExcelFile("Condata", 4, 3) + Randomnum;
 
 //		  validate home page
 
@@ -273,7 +274,6 @@ public class ContactModuleTest extends BaseClass {
 //		   fetch date from jutil   
 		UtilityObjectClass.getTest().log(Status.INFO, "fetch current date from javautil");
 		String Currentdate = jutil.fetchCurrentDate();
-		
 
 //		    identify start date T.f  and enter
 		UtilityObjectClass.getTest().log(Status.INFO, "identify the start date TF and enter the current date");
@@ -301,7 +301,8 @@ public class ContactModuleTest extends BaseClass {
 
 		String verifystartinfo = contactinfo.getStartdatecontactinfo();
 		UtilityObjectClass.getTest().log(Status.PASS, "verify contact name with suppoerted start date");
-		Assert.assertTrue(verifystartinfo.contains(Currentdate),"verify contact name with support start date in contact info page");
+		Assert.assertTrue(verifystartinfo.contains(Currentdate),
+				"verify contact name with support start date in contact info page");
 
 //			verify contact name with support end date in contact info page
 		String verifyendinfo = contactinfo.getEnddatecontactctinfo();
@@ -324,7 +325,7 @@ public class ContactModuleTest extends BaseClass {
 		UtilityObjectClass.getTest().log(Status.INFO, "identify alert popup and click on it");
 		wutil.handleAlertClickonOK(driver);
 		Thread.sleep(1000);
-		
+
 		UtilityObjectClass.getTest().log(Status.INFO, "close the excel");
 		exutil.closeExcel();
 		soft.assertAll();
